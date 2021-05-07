@@ -19,5 +19,8 @@ export class MouseDirective {
       this.renderer.removeClass(this.elementRef.nativeElement, 'hidden')
     }
   }
-  
+  @HostListener("document:mouseleave", ["$event"])
+  onMouseLeave(e) {
+    this.renderer.addClass(this.elementRef.nativeElement, 'hidden');
+  }
 }
