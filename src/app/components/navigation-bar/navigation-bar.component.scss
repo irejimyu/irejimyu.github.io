@@ -29,20 +29,22 @@ header {
       font-size: 1.5em;
       font-weight: 700;
       letter-spacing: 0.5rem;
-
-      &:hover {
-        transform: scale(1.1);
+      @media (hover: hover) {
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
 
     &__menu {
       z-index: 100;
-
-      &:hover {
-        path {
-          &:nth-child(2) {
-            transform: translate(-15px, 0px);
-            transition: var(--transition-fast);
+      @media (hover: hover) {
+        &:hover {
+          path {
+            &:nth-child(2) {
+              transform: translate(-15px, 0px);
+              transition: var(--transition-fast);
+            }
           }
         }
       }
@@ -58,11 +60,8 @@ header {
           }
         }
       }
-
     }
   }
-
-
 }
 
 .nav-link {
@@ -72,16 +71,14 @@ header {
   text-decoration: none;
   filter: opacity(0.8);
   transition: var(--transition-fast);
-
-  &:hover {
-    filter: opacity(1);
+  @media (hover: hover) {
+    &:hover {
+      filter: opacity(1);
+    }
   }
-
   svg {
     min-width: 2rem;
   }
-
-
 }
 
 .menu-wrapper {
@@ -106,7 +103,6 @@ header {
   &.active * {
     opacity: 1;
   }
-
 
   &.active {
     transform: translate(0, 0%);
@@ -140,9 +136,8 @@ header {
           text-shadow: -1px 1px var(--clr-primary);
         }
 
-
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           top: 50%;
           left: 0;
@@ -168,21 +163,20 @@ header {
           transition: var(--transition-fast);
           pointer-events: none;
         }
+          &:hover {
+            transform: scale(1.5);
+            opacity: 1;
+          }
 
-        &:hover {
-          transform: scale(1.5);
-          opacity: 1;
-        }
+          &:hover::before {
+            opacity: 0.15;
+            letter-spacing: 20px;
+          }
 
-        &:hover::before {
-          opacity: .15;
-          letter-spacing: 20px;
-        }
-
-        &:hover::after {
-          width: 100%;
-          opacity: 1;
-        }
+          &:hover::after {
+            width: 100%;
+            opacity: 1;
+          }
       }
     }
   }
@@ -203,11 +197,11 @@ header {
       li {
         transition: var(--transition-fast);
         padding: 2vh;
-
-        &:hover {
-          transform: scale(1.5);
+        @media (hover: hover) {
+          &:hover {
+            transform: scale(1.5);
+          }
         }
-
         svg {
           min-width: var(--icon-height);
         }
@@ -220,7 +214,7 @@ header {
       .theme {
         input[type="checkbox"] {
           position: relative;
-          width: calc(var(--icon-height) *2);
+          width: calc(var(--icon-height) * 2);
           height: var(--icon-height);
           appearance: none;
           background: var(--clr-secondary);
@@ -228,9 +222,8 @@ header {
           border-radius: 20px;
           box-shadow: 0 0 5px var(--clr-p-dark);
 
-
           &::before {
-            content: '';
+            content: "";
             position: absolute;
             width: var(--icon-height);
             height: var(--icon-height);
@@ -245,18 +238,11 @@ header {
           &:checked::before {
             left: var(--icon-height);
           }
-
-
         }
-
       }
-
     }
   }
-
 }
-
-
 
 // .curtain {
 //   height: 100vh;
@@ -273,7 +259,5 @@ header {
 // }
 
 @media only screen and (max-width: 768px) {
-
   /* For mobile phones: */
-
 }
